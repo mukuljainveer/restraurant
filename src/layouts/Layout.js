@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
-import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -11,31 +10,14 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import {Link} from 'react-router-dom'
-import Container from "@material-ui/core/Container";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { BiRestaurant } from 'react-icons/bi';
-import SendIcon from "@material-ui/icons/Send";
-// import DraftsIcon from '@material-ui/icons/DraftsIcon';
 
 const drawerWidth = 240;
-
-function Copyright() {
-  return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {"Copyright © "}
-        <Link color="inherit" href="https://material-ui.com/">
-          Mukul Jain
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   rootNav: {
@@ -132,7 +114,6 @@ const Layout = (props) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
       <div className={classes.root}>
@@ -191,46 +172,12 @@ const Layout = (props) => {
                 <ListItemText primary="Restaurants" />
               </ListItem>
             </Link>
-
-            {/*<ListItem button>*/}
-            {/*  <ListItemIcon>*/}
-            {/*    <SendIcon />*/}
-            {/*  </ListItemIcon>*/}
-            {/*  <ListItemText primary="Sent mail" />*/}
-            {/*</ListItem>*/}
-
-            {/* <ListItem selected button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Drafts" />
-          </ListItem> */}
-            {/* <ListItem button onClick={handleClick}>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary="Inbox" />
-            {open ? <ExpandLess /> : <ExpandMore />}
-          </ListItem> */}
-            {/* <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItem button className={classes.nested}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Starred" />
-              </ListItem>
-            </List>
-          </Collapse> */}
           </List>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <div className={classes.container}>
             {props.children}
-            {/*<Box pt={4}>*/}
-            {/*  <Copyright />*/}
-            {/*</Box>*/}
           </div>
         </main>
       </div>

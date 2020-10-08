@@ -8,11 +8,10 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import _ from 'lodash'
 import store from "../store";
-import { addNewRestaurant, editRestaurant } from "../store/actions/crud";
+import { editRestaurant } from "../store/actions/crud";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 import SnackBar from "../components/SnackBar";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const EditRestaurant = () => {
-    const history = useHistory();
     const location = useLocation();
 
     const [editable, setEditable] = useState(0)
@@ -54,7 +52,7 @@ const EditRestaurant = () => {
     useEffect(() => {
         setEditable(_.split(location.pathname, '/')[1] - 1)
         setRestaurant(data[editable])
-    })
+    },[data,editable,location.pathname])
 
     const classes = useStyles();
 
@@ -95,9 +93,9 @@ const EditRestaurant = () => {
         )
     }
 
-    const textBoxHandler = (event) => {
-        setRestaurant({ ...restaurant, [event.target.name]: event.target.value })
-    }
+    // const textBoxHandler = (event) => {
+    //     setRestaurant({ ...restaurant, [event.target.name]: event.target.value })
+    // }
 
     const removeMenuHandler = (index) => {
         restaurant.menu.splice(index, 1)

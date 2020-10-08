@@ -24,13 +24,10 @@ function Restaurant(state=initalState,action) {
         case 'ADD_RESTAUTRANT':
             state.data.push(action.data)
             return state;
-            break;
-
         case 'EDIT_RESTAUTRANT':
             state.data.splice(action.data.editable,1)
             state.data.splice(action.data.editable,0,action.data.restaurant)
             return state;
-            break;
         default:
             return state
     }

@@ -44,7 +44,7 @@ const ViewRestaurant = () => {
     useEffect(() => {
         setEditable(_.split(location.pathname, '/')[1] - 1)
         setRestaurant(data[editable])
-    })
+    },[data,editable,location.pathname])
 
     const classes = useStyles();
 

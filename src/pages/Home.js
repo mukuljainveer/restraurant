@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Table from "../components/Table";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";

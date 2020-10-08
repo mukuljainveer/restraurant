@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import CreateIcon from '@material-ui/icons/Create';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {useSelector} from "react-redux";
 
@@ -56,11 +55,11 @@ export default function CustomizedTables(props) {
 
   useEffect(()=>{
     data.map(restaurant=>{
-        rows.push(createData(restaurant.name))
+        return rows.push(createData(restaurant.name))
     })
     setRows(rows)
     setLoading(true)
-  })
+  },[data,rows])
 
 
   return (
