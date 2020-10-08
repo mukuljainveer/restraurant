@@ -21,10 +21,10 @@ function App() {
           <Route path="/:id/view" exact>
             <ViewRestaurant />
           </Route>
-          <Route path="/add">
+          <Route path="/add" exact>
             <AddRestaurant />
           </Route>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
         </Switch>
